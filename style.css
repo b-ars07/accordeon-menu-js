@@ -1,0 +1,148 @@
+*,
+:after,
+:before {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    left: 0;
+    top: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: auto;
+}
+
+.logo {
+    text-align: center;
+    margin-bottom: 23px;
+}
+
+.accordeon {
+    position: relative;
+    width: 460px;
+}
+
+.accordeon__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.accordeon__item {
+    padding: 0;
+    margin: 0;
+    background-color: #e7e7e7;
+    border-radius: 30px;
+    width: 100%;
+    position: relative;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.accordeon__item-title:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-top: 12px solid #ff8663;
+    top: 35%;
+    right: 3%;
+}
+
+.accordeon__item--active .accordeon__item-title:after {
+    content: none;
+}
+
+.accordeon__item--active:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-bottom: 12px solid #fff;
+    border-top: none;
+    top: 9%;
+    right: 3%;
+}
+
+.accordeon__item-title {
+    border-radius: 30px;
+    font-family: "Fira Sans";
+    font-size: 15px;
+    font-weight: 500;
+    display: block;
+    width: 100%;
+    height: 42px;
+    background-color: #696666;
+    color: #fff;
+    line-height: 2.8;
+    padding-left: 20px;
+    cursor: pointer;
+}
+
+.accordeon__item:nth-child(even) .accordeon__item-title:hover,
+.accordeon__item:nth-child(odd) .accordeon__item-title:hover {
+    background-color: #ff8663;
+    color: #fff;
+    transition: background-color 0.4s, color 0.2s;
+}
+
+.accordeon__item-title:hover:after {
+    border-top: 12px solid #fff;
+}
+
+.accordeon__item--active:hover:after {
+    border-top: none;
+}
+
+.accordeon__item:nth-child(even) .accordeon__item-title.accordeon__item--active,
+.accordeon__item:nth-child(odd) .accordeon__item-title.accordeon__item--active {
+    background: #ff8663;
+    color: #fff;
+}
+
+.accordeon__item:nth-child(even) .accordeon__item-title {
+    background-color: #e7e7e7;
+    color: #4f4f4f;
+}
+
+.accordeon__link-wrap {
+    display: block;
+    margin-left: 0px;
+    margin-top: 0px;
+    padding-bottom: 0px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.8s;
+}
+
+.accordeon__link {
+    display: block;
+    color: #4f4f4f;
+    font-family: "Fira Sans";
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 26px;
+    text-decoration: none;
+}
+
+.accordeon__link:hover {
+    color: #ff8663;
+    transition: color 0.4s;
+}
